@@ -1,13 +1,12 @@
-package pers.liuchengyin.logbackadvice;
+package com.neo.monitor.advice;
 
 import ch.qos.logback.classic.spi.LoggingEvent;
 import ch.qos.logback.core.ConsoleAppender;
 
 /**
- * @ClassName ConsoleAppenderDS
- * @Description
- * @Author 柳成荫
- * @Date 2021/1/9
+ * @author blue-light
+ * Date 2021/1/9
+ * Description:
  */
 public class LcyConsoleAppender extends ConsoleAppender<Object> {
     @Override

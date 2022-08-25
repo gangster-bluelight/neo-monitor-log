@@ -1,4 +1,4 @@
-package pers.liuchengyin.utils;
+package com.neo.monitor.utils;
 
 import org.springframework.util.CollectionUtils;
 import java.util.*;
@@ -6,10 +6,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @ClassName DesensitizationUtil
- * @Description 脱敏工具类
- * @Author 柳成荫
- * @Date 2021/1/9
+ * @author blue-light
+ * Date 2021/1/9
+ * Description 脱敏工具类
  */
 public class DesensitizationUtil {
     /**
@@ -81,7 +80,7 @@ public class DesensitizationUtil {
             String originalMessage = eventFormattedMessage;
             boolean flag = false;
             // 获取Yml配置文件内容 - Map格式
-            Map<String, Object> patternMap = YmlUtils.patternMap;
+            Map<String, Object> patternMap = YamlUtil.patternMap;
             if (!CollectionUtils.isEmpty(patternMap)) {
                 // 如果没有开启脱敏，返回""，则不会做脱敏操作
                 if (!this.checkOpen(patternMap)) {
@@ -215,14 +214,14 @@ public class DesensitizationUtil {
     private Object getKeyIgnoreCase(String key) {
         // 获取所有pattern
         if (CollectionUtils.isEmpty(allPattern)) {
-            allPattern = YmlUtils.getAllPattern();
+            allPattern = YamlUtil.getAllPattern();
         }
         // 作为ignoreFlag初始化的标记，第一次ignoreFlag需要从Yml中获取是否开启
         // 后面就不用去Yml里获取了
         if (!initIgnoreFlag) {
             initIgnoreFlag = true;
             // 仅在第一次会去获取，无论true还是false(默认是开启忽略大小写)
-            ignoreFlag = YmlUtils.getIgnore();
+            ignoreFlag = YamlUtil.getIgnore();
             if (ignoreFlag) {
                 // 如果忽略大小写，就去获取一份key小写化的allPattern
                 lowerCaseAllPattern = this.transformUpperCase(allPattern);
@@ -394,7 +393,7 @@ public class DesensitizationUtil {
         if (!initOpenFlag) {
             initOpenFlag = true;
             // 仅在第一次会去获取
-            openFlag = YmlUtils.getOpen();
+            openFlag = YamlUtil.getOpen();
         }
         // 第二次以后openFlag已经有值，无论true还是false(默认是未开启)
         return openFlag;

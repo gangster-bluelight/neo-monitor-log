@@ -1,4 +1,4 @@
-package com.yhq.sensitive.util;
+package com.neo.monitor.utils;
 
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
@@ -11,18 +11,11 @@ import java.util.*;
 
 /**
  * 初始化敏感词库，将敏感词加入到HashMap中，构建DFA算法模型
- * @author yhq
- * @date 2021年9月10日 14点53分
+ * @author blue-light
+ * Date: 2022-08-17
  */
 @NoArgsConstructor
 public class SensitiveWordInit {
-
-    /**
-     * 字符编码
-     */
-    private final String encoding = "utf-8";
-
-
     @SuppressWarnings("rawtypes")
     public HashMap sensitiveWordMap;
 
@@ -32,12 +25,10 @@ public class SensitiveWordInit {
      */
     @SneakyThrows
     public Map initKeyWord(String filePath){
-
         //读取敏感词库
         Set<String> keyWordSet = readSensitiveWordFile(filePath);
         //将敏感词库加入到HashMap中
         addSensitiveWordToHashMap(keyWordSet);
-
         return sensitiveWordMap;
     }
 
@@ -119,7 +110,11 @@ public class SensitiveWordInit {
         Set<String> set;
         //读取文件
         File file = new File(filePath);
-        InputStreamReader read = new InputStreamReader(new FileInputStream(file),encoding);
+        /**
+         * 字符编码
+         */
+        String encoding = "utf-8";
+        InputStreamReader read = new InputStreamReader(new FileInputStream(file), encoding);
         try {
             //文件流是否存在
             if(!file.isFile() || !file.exists()){

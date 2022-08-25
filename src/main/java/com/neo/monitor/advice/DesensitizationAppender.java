@@ -1,14 +1,14 @@
-package pers.liuchengyin.logbackadvice;
+package com.neo.monitor.advice;
 
 import ch.qos.logback.classic.spi.LoggingEvent;
+import com.neo.monitor.utils.DesensitizationUtil;
 
 import java.lang.reflect.Field;
 
 /**
- * @ClassName DesensitizationAppender
- * @Description 脱敏类 - 将日志进行脱敏
- * @Author 柳成荫
- * @Date 2021/1/9
+ * @author bule-light
+ * Date 2021/1/9
+ * Description 脱敏类 - 将日志进行脱敏
  */
 public class DesensitizationAppender {
     /**

@@ -1,13 +1,12 @@
-package com.yhq.sensitive.strategy;
+package com.neo.monitor.strategy;
 
-
-import com.yhq.sensitive.enums.SensitiveDefaultLengthEnum;
-import com.yhq.sensitive.util.SensitiveInfoUtils;
+import com.neo.monitor.lang.SensitiveDefaultLengthEnum;
+import com.neo.monitor.utils.SensitiveInfoUtils;
 
 /**
  * 固话脱敏
- * @author yhq
- * @date 2021年9月6日 16点13分
+ * @author blue-light
+ * Date: 2022-08-17
  **/
 public class SensitiveFixedPhone implements IStrategy {
 

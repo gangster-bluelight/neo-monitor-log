@@ -1,4 +1,4 @@
-package com.yhq.sensitive.util;
+package com.neo.monitor.utils;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +11,8 @@ import java.util.Set;
 
 /**
  * 敏感词过滤
- * @author yhq
- * @date 2021年9月10日 14点53分
+ * @author blue-light
+ * Date: 2022-08-17
  */
 @Slf4j
 public class SensitiveWordFilter {
@@ -149,8 +149,7 @@ public class SensitiveWordFilter {
 						break;
 					}
 				}
-			}
-			else{
+			} else{
 				//不存在，直接返回
 				break;
 			}
@@ -161,5 +160,4 @@ public class SensitiveWordFilter {
 		}
 		return matchFlag;
 	}
-
 }

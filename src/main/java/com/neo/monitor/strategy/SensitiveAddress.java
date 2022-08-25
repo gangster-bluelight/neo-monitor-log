@@ -1,21 +1,20 @@
-package com.yhq.sensitive.strategy;
+package com.neo.monitor.strategy;
 
-import com.yhq.sensitive.enums.SensitiveDefaultLengthEnum;
-import com.yhq.sensitive.util.SensitiveInfoUtils;
+import com.neo.monitor.lang.SensitiveDefaultLengthEnum;
+import com.neo.monitor.utils.SensitiveInfoUtils;
 
 /**
  * 地址脱敏
- * @author yhq
- * @date 2021年9月6日 16点13分
+ *
+ * @author blue-light
+ * Date: 2022-08-17
  **/
 public class SensitiveAddress implements IStrategy {
-
     @Override
-    public String desensitization(String address,int begin, int end) {
-        if(begin != SensitiveDefaultLengthEnum.ADDRESS.getBegin() && begin !=0 ){
-            return SensitiveInfoUtils.address(address,begin);
+    public String desensitization(String address, int begin, int end) {
+        if (begin != SensitiveDefaultLengthEnum.ADDRESS.getBegin() && begin != 0) {
+            return SensitiveInfoUtils.address(address, begin);
         }
         return SensitiveInfoUtils.address(address, SensitiveDefaultLengthEnum.ADDRESS.getBegin());
     }
-
 }

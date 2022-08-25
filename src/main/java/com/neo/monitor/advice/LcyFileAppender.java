@@ -1,13 +1,11 @@
-package pers.liuchengyin.logbackadvice;
+package com.neo.monitor.advice;
 
 import ch.qos.logback.classic.spi.LoggingEvent;
 import ch.qos.logback.core.FileAppender;
 
 /**
- * @ClassName FileAppenderDS
- * @Description
- * @Author 柳成荫
- * @Date 2021/1/9
+ * @author blue-light
+ * Date: 2021/1/9
  */
 public class LcyFileAppender extends FileAppender<Object> {
 
